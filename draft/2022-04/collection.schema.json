@@ -1,0 +1,13 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://json-flashcard.org/draft/2022-04/flashcard.schema.json",
+    "title": "Flashcard Collection",
+    "description": "A collection of flashcards",
+    "type": "object",
+    "properties": {
+        "cards": {
+            "description": "A flashcard",
+            "type": "array"
+        }
+    }
+}

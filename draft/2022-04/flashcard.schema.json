@@ -1,0 +1,27 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://json-flashcard.org/draft/2022-04/flashcard.schema.json",
+    "title": "Flashcard",
+    "description": "A single flashcard with a front and a back",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "A unique identifier",
+            "type": "string",
+            "format": "uuid"
+        },
+        "front": {
+            "description": "The front-page content",
+            "type": "string"
+        },
+        "back": {
+            "description": "The back-page content",
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "front",
+        "back"
+    ]
+}
