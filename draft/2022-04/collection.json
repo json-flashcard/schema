@@ -1,9 +1,30 @@
 {
+    "meta": {
+        "id": "ffa2834c-85f6-47e5-ac2d-7e1697afc99a",
+        "version": "0.0.1",
+        "title": "HSK 3.0 (with audio)",
+        "author": {
+            "name": "Simon Shine",
+            "email": "simon@simonshine.dk"
+        }
+    },
     "cards": [
         {
             "id": "6144e38b-e006-4eca-9795-2d9ccfb3fcc1",
             "front": "你好",
             "back": "Nǐ hǎo"
+        },
+        {
+            "id": "0c67ef9c-d901-476e-b3a8-1b0ff0705a86",
+            "front": "朋友",
+            "back": "Péngyǒu"
+        }
+    ],
+    "decks": [
+        {
+            "deck_id": "eccccd49-1a9a-4863-829e-93df03b6923f",
+            "title": "HSK 1",
+            "card_set": []
         }
     ]
 }

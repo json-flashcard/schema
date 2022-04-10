@@ -1,0 +1,138 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://json-flashcard.org/draft/2022-04/schema",
+    "$ref": "#/definitions/collection",
+    "definitions": {
+        "collection": {
+            "title": "Flashcard collection",
+            "description": "A collection of flashcards and decks",
+            "type": "object",
+            "properties": {
+                "meta": {
+                    "$ref": "#/definitions/meta"
+                },
+                "cards": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/card"
+                    }
+                },
+                "decks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/deck"
+                    }
+                }
+            },
+            "required": [
+                "meta",
+                "cards",
+                "decks"
+            ]
+        },
+        "meta": {
+            "title": "Flashcard collection meta-information",
+            "description": "Meta-information about a flashcard collection (author, version, contact, etc.)",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "A unique identifier for the flashcard collection",
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "title": {
+                    "description": "The title of a flashcard collection",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "The version number of the flashcard collection",
+                    "type": "string",
+                    "pattern": "^(0\\.|[1-9][0-9]*\\.)*(0|[1-9][0-9]*)$"
+                },
+                "author": {
+                    "$ref": "#/definitions/author"
+                },
+                "uri": {
+                    "description": "A URI at which the collection is available",
+                    "type": "string",
+                    "format": "uri"
+                }
+            },
+            "required": [
+                "id",
+                "title",
+                "version"
+            ]
+        },
+        "card": {
+            "title": "A flashcard",
+            "description": "The content for a flashcard",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/card_id"
+                },
+                "front": {
+                    "description": "The front-page content",
+                    "type": "string"
+                },
+                "back": {
+                    "description": "The back-page content",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "front",
+                "back"
+            ]
+        },
+        "deck": {
+            "title": "A deck of flashcards",
+            "description": "A set of flashcards known by their identifier",
+            "type": "object",
+            "properties": {
+                "deck_id": {
+                    "description": "A unique identifier for the deck",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "A short description of the deck",
+                    "type": "string"
+                },
+                "card_set": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/card_id"
+                    },
+                    "uniqueItems": true
+                }
+            },
+            "required": [
+                "deck_id",
+                "title",
+                "card_set"
+            ]
+        },
+        "card_id": {
+            "title": "A flashcard identifier",
+            "description": "A unique flashcard identifier",
+            "type": "string"
+        },
+        "author": {
+            "title": "Author",
+            "description": "The author of this collection",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "The author's name",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "The author's name",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
